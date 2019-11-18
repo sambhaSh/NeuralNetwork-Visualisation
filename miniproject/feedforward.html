@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charsrt="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script language="javascript" type="text/javascript" src="feedforward/libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="feedforward/libraries/p5.dom.min.js"></script>
+  <script language="javascript" type="text/javascript" src="feedforward/Connection.js"></script>
+  <script language="javascript" type="text/javascript" src="feedforward/Network.js"></script>
+  <script language="javascript" type="text/javascript" src="feedforward/Neuron.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <title>neural network simulation</title>
+  <style>
+
+    #nav{
+      background-color:#2E8B57;
+    }
+    #mg{
+      width:8%;
+      height:4%;
+    }
+    #body{
+      background-color:;
+      font-family: "Lato", sans-serif;
+    }
+    #main{
+      color:black;
+      padding:2%;
+      font-size: 16px;
+      font-family: "Lato", sans-serif;
+      }
+
+      #p{
+        text-align: justify;
+        font-size:16px;
+        font-family: "Lato", sans-serif;
+      }
+      #col4{
+        font-size:14px;
+          padding:1%;
+          font-family: "Lato", sans-serif;
+        }
+        #col10{
+          font-size:16px;
+          padding:0%;
+          background-color:;
+          border-style: solid;
+          border-width: 1px;
+          font-family: "Lato", sans-serif;
+        }
+        #col2{
+          font-size: 14px;
+          border-style: solid;
+          border-width: 1px;
+          padding:1%;
+          font-family: "Lato", sans-serif;
+
+        }
+        #col8{
+          padding:2%;
+        }
+        #dropdown{
+          background-color:	#3CB371;
+        }
+        #a{
+          background-color:	#3CB371;
+        }
+        .dropdown a:hover{
+           background-color:	#3CB371;
+        }
+        .navbar a:hover{
+             background-color:	#3CB371;
+        }
+
+    </style>
+    </head>
+  <body id="body">
+
+  <!--navbar-->
+
+  <nav class="navbar navbar-expand-md " id="nav">
+    <img src="image/logo1.png"class="rounded"id="mg">
+    <ul class="nav nav-tab">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Perceptron</a>
+        <div class="dropdown-menu "id="dropdown">
+          <a class="dropdown-item text-light"id="a"href="perceptron.html">Perceptron</a>
+          <!-- <a class="dropdown-item" href="single_layer_perceptron.html">Single layer Perceptron</a> -->
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Multilayer Perceptron</a>
+        <div class="dropdown-menu "id="dropdown">
+          <a class="dropdown-item text-light"id="a"href="feedforward.html">Feedforward Model</a>
+          <a class="dropdown-item text-light"id="a" href="Examplefeedforward.html">Example</a>
+          <!-- <a class="dropdown-item" href="backpropagation.html">Backpropagation</a> -->
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Digits recognition</a>
+        <div class="dropdown-menu "id="dropdown">
+            <a class="dropdown-item text-light" id="a" href="Examplefeedforward2.html">Example</a>
+          <!-- <a class="dropdown-item" href="backpropagation.html">Backpropagation</a> -->
+        </div>
+      </li>
+    </ul>
+    <ul class="nav nav-tap ml-auto">
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="index.html"> <i class="fas fa-home"style="width:22px"></i>Home</a>
+      </li>
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="aboutus.html"><i class="fas fa-address-card"style="width:22px"></i>About-us</a>
+      </li>
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="Documentations.html"><i class="fas fa-file"style="width:22px"></i>Documentations</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!--main window-->
+  <div id="main">
+    <h3>Feedforward</h3>
+      <div id="p">
+        The feed forward model, meaning that an input arrives at the first neuron (drawn on the lefthand side of the window) and the output of
+        that neuron flows across the connections to the right until it exits as output from the network itself.
+      </div>
+      <div class="row">
+      <div class="col-4"id="col4">
+        <br/>
+        <img src="image/feedmlp.png" class="img-fluid" width="100%" height="100%"id="mg1">
+          <center><p>Fig 1: Feedforward</p></center>
+      </div>
+      <div class="col-8" id="col8">
+        <div id="p">
+          <div style="color:black"><b style="color:black">Node:</b> </di>The basic unit of computation (represented by a single circle)<br/>
+
+        <b style="color:black">  Layer: </b>A collection of nodes of the same type and index (i.e. input, hidden, outer layer)<br/>
+
+          <b style="color:black">Connection:</b> A weighted relationship between a node of one layer to the node of another layer<br/>
+
+        <b style="color:black"> W: </b>The weight of a connection,<br/>
+
+        <b style="color:black">  I: </b>Input node (the neural network input)<br/>
+
+        <b style="color:black">  H: </b>Hidden node (a weighted sum of input layers or previous hidden layers)<br/>
+
+        <b style="color:black">  HA: </b>Hidden node activated (the value of the hidden node passed to a predefined function)<br/>
+
+        <b style="color:black">  O: </b>Outut node (A weighted sum of the last hidden layer)<br/>
+
+        <b style="color:black">  OA: </b>Output node activated (the neural network output, the value of an output node passed to a predefined function)<br/>
+
+        <b style="color:black">  B: </b>Bias node (always a contrant, typically set equal to 1.0)
+        </div>
+      </div>
+
+      </div>
+  </div>
+
+      <h3>Visualisation of feedforward MLP</h3>
+      <div class="row">
+      <div class="col-2" id="col2">
+        <br/>
+        <input type="button" class="btn btn-success btn-sm" id="start" value="Start">
+        <input type="button" class="btn btn-success btn-sm" id="reset" value="Reset">
+        <p id="numOutput">No. of Output: 3</p>
+        <input type="button" class="btn btn-success btn-sm" id="output+" value="+">
+        <input type="button" class="btn btn-success btn-sm" id="output-" value="-">
+        <p id="numInput">No. of Inputs: 3</p>
+        <input type="button" class="btn btn-success btn-sm" id="input+" value="+">
+        <input type="button" class="btn btn-success btn-sm"id="input-" value="-">
+        <p id="numHiddenLayer">No. of Hidden Layers: 3</p>
+        <input type="button" class="btn btn-success btn-sm" id="numHL+" value="+">
+        <input type="button" class="btn btn-success btn-sm"id="numHL-" value="-">
+        <p id="numHiddenNodes">No. of Hidden Neurons: 4</p>
+        <input type="button" class="btn btn-success btn-sm" id="numHN+" value="+">
+        <input type="button" class="btn btn-success btn-sm" id="numHN-" value="-">
+    </div>
+    <div class="col-10"id="col10">
+      <div id="sketch-div">
+        <script language="javascript" type="text/javascript" src="feedforward/sketch.js"></script>
+     </div>
+  </div>
+  </div>
+  </div>
+  <footer class="page-footer font-small blue pt-4" style="background-color:#2E8B57"></footer>
+  </body>
+</html>

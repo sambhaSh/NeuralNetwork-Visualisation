@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charsrt="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>neural networks visualisation</title>
+  <style>
+
+    #nav{
+      background-color:#2E8B57;
+    }
+    #body{
+      background-color:;
+      font-family: "Lato", sans-serif;
+    }
+    #mg{
+      width:8%;
+      height:4%;
+    }
+    #main{
+      color:black;
+      padding:2%;
+      font-size: 20px;
+      font-family: "Lato", sans-serif;
+      }
+      #mg1{
+        width:200;
+        height:300;
+      }
+      #p{
+        text-align: justify;
+        font-size: 16px;
+        text-align:center;
+      }
+      #h3{
+          color:#2E8B57;
+          font-family: "Lato", sans-serif;
+      }
+      #a{
+        font-size:15px;
+        padding:2%;
+        font-family: "Lato", sans-serif;
+      }
+      #col4{
+        font-size: 14px;
+        font-family: "Lato", sans-serif;
+      }
+      #dropdown{
+        background-color:	#3CB371;
+      }
+      #a{
+        background-color:	#3CB371;
+      }
+      .dropdown a:hover{
+         background-color:	#3CB371;
+      }
+      .navbar a:hover{
+           background-color:	#3CB371;
+
+      }
+
+  </style>
+ </head>
+  <body id="body">
+
+  <!--navbar-->
+
+  <nav class="navbar navbar-expand-md " id="nav">
+    <img src="image/logo1.png"class="rounded"id="mg">
+    <ul class="nav nav-tab">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Perceptron</a>
+        <div class="dropdown-menu "id="dropdown">
+          <a class="dropdown-item text-light"id="a"href="perceptron.html">Perceptron</a>
+          <!-- <a class="dropdown-item" href="single_layer_perceptron.html">Single layer Perceptron</a> -->
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Multilayer Perceptron</a>
+        <div class="dropdown-menu "id="dropdown">
+          <a class="dropdown-item text-light" id="a"href="feedforward.html">Feedforward Model</a>
+          <a class="dropdown-item text-light" id="a" href="Examplefeedforward.html">Example</a>
+
+          <!-- <a class="dropdown-item" href="backpropagation.html">Backpropagation</a> -->
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Digits recognition</a>
+        <div class="dropdown-menu "id="dropdown">
+            <a class="dropdown-item text-light" id="a" href="Examplefeedforward2.html">Example</a>
+          <!-- <a class="dropdown-item" href="backpropagation.html">Backpropagation</a> -->
+        </div>
+      </li>
+    </ul>
+    <ul class="nav nav-tap ml-auto">
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="index.html"> <i class="fas fa-home"style="width:22px"></i>Home</a>
+      </li>
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="aboutus.html"><i class="fas fa-address-card"style="width:22px"></i>About-us</a>
+      </li>
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="Documentations.html"><i class="fas fa-file"style="width:22px"></i>Documentations</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!--main window-->
+  <div id="main">
+    <div class="jumbotron">
+    <p id="p">For Documentations click to the github icon below</p>
+     <center><a href="#"><i class="fa fa-github-square" style="font-size:60px;color:green"></i></a></center>
+     </div>
+     <br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>
+    <footer class="page-footer font-small blue pt-4" style="background-color:#2E8B57;"></footer>
+  </body>
+</html>

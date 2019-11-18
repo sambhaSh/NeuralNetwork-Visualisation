@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charsrt="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <title>neural networks visualisation</title>
+  <style>
+
+    #nav{
+      background-color:#2E8B57;
+    }
+    #body{
+      background-color:;
+      font-family: "Lato", sans-serif;
+    }
+    #mg{
+      width:8%;
+      height:4%;
+    }
+    #main{
+      color:black;
+      padding:2%;
+      font-size: 20px;
+      font-family: "Lato", sans-serif;
+      }
+      #mg1{
+        width:200;
+        height:300;
+      }
+      #p{
+        text-align: justify;
+        font-size: 16px;
+      }
+      #h3{
+          color:#2E8B57;
+          font-family: "Lato", sans-serif;
+      }
+      #a{
+        font-size:15px;
+        padding:2%;
+        font-family: "Lato", sans-serif;
+      }
+      #col4{
+        font-size: 14px;
+        font-family: "Lato", sans-serif;
+      }
+      #dropdown{
+        background-color:	#3CB371;
+      }
+      #a{
+        background-color:	#3CB371;
+      }
+      .dropdown a:hover{
+         background-color:	#3CB371;
+      }
+      .navbar a:hover{
+           background-color:	#3CB371;
+
+      }
+
+  </style>
+ </head>
+  <body id="body">
+
+  <!--navbar-->
+
+  <nav class="navbar navbar-expand-md " id="nav">
+    <img src="image/logo1.png"class="rounded"id="mg">
+    <ul class="nav nav-tab">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Perceptron</a>
+        <div class="dropdown-menu "id="dropdown">
+          <a class="dropdown-item text-light"id="a"href="perceptron.html">Perceptron</a>
+          <!-- <a class="dropdown-item" href="single_layer_perceptron.html">Single layer Perceptron</a> -->
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Multilayer Perceptron</a>
+        <div class="dropdown-menu "id="dropdown">
+          <a class="dropdown-item text-light" id="a"href="feedforward.html">Feedforward Model</a>
+          <a class="dropdown-item text-light" id="a" href="Examplefeedforward.html">Example</a>
+
+          <!-- <a class="dropdown-item" href="backpropagation.html">Backpropagation</a> -->
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Digits recognition</a>
+        <div class="dropdown-menu "id="dropdown">
+            <a class="dropdown-item text-light" id="a" href="Examplefeedforward2.html">Example</a>
+          <!-- <a class="dropdown-item" href="backpropagation.html">Backpropagation</a> -->
+        </div>
+      </li>
+    </ul>
+    <ul class="nav nav-tap ml-auto">
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="#"> <i class="fas fa-home"style="width:22px"></i>Home</a>
+      </li>
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="aboutus.html"><i class="fas fa-address-card"style="width:22px"></i>About-us</a>
+      </li>
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="Documentations.html"><i class="fas fa-file"style="width:22px"></i>Documentations</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!--main window-->
+  <div id="main">
+  <div class="shadow-lg p-2 mb-3 bg-white rounded"><h4 id="h3"><b>VISUALISATION OF ARTIFICIAL NEURAL NETWORKS</b></h4></div>
+    <br/>
+    <h3>Neural Networks</h3>
+      <div id="p">
+            In biological order neural network are an interconnected web of neurons transmitting elaborate patterns of electrical signals. Dendrites receive input
+            signals and, based on those inputs, fire an output signal via an axon. Or something like that.
+      </div>
+      <br/>
+        <div id="p">
+            The most common application of neural networks in computing today is to perform one of these easy-for-a-human, difficult-for-a-machine  tasks, often referred to as
+            pattern recognition. Applications range from optical character recognition (turning printed or handwritten scans into digital text) to facial recognition.
+            A neural network is a connectionist computational system. The computational systems we write are procedural; a program starts at the first line of code, executes it,
+            and goes on to the next,following instructions in a linear fashion. A true neural network does not follow a linear path. Rather, information is processed collectively,
+            in parallel throughout a network of nodes (the nodes, in this case, being neurons).
+      </div>
+      <br/>
+      <div class="row">
+      <div class="col-4" id="col4">
+      <img src="image/node2.jpeg" class="img-fluid" width="100%" height="100%">
+      <center><p>Fig 1: Neural Networks.</p></center>
+    </div>
+    <div class="col-8" id="col8">
+    <div id="p">
+        Here we have example of acomplex system.The individual elements of the network, the neurons, are simple. They read an input, process it, and generate an output. A network of many
+        neurons, however, can exhibit incredibly rich and intelligent behaviors. One of the key elements of a neural network is its ability to learn. A neural network is not just a complex
+        system, but a complex adaptive system, meaning it can change its internal structure based on the information flowing through it. Typically, this is achieved through the
+        adjusting of weights. In the diagram above, each line represents a connection between two neurons and indicates the pathway for the flow of information. Each connection has a
+        weight, a number that controls the signal between the two neurons. If the network generates a good output there is no need to adjust the weights. However,
+        if the network generates a poor output an error, so to speak then the system adapts, altering the weights in order to improve subsequent results.
+    </div>
+  </div>
+  </div>
+    <div id="p">
+        There are several strategies for learning they are:
+    </div>
+    <div id="p">
+
+      <ul>
+        <li>
+          <p id="p">
+            <div style="color:green">Supervised Learning:</div>Essentially, a strategy that involves a teacher that is smarter than the network itself. For example, lets take the facial recognition
+            example. The teacher shows the network a bunch of faces, and the teacher already knows the name associated with each face. The network makes its
+            guesses, then the teacher provides the network with the answers. The network can then compare its answers to the known correct ones and make adjustments according to its errors.
+        </li>
+        <li>
+          <p id="p">
+            <div style="color:green">Unsupervised Learning:</div>Required when there isnt an example data set with known answers. Imagine searching for a hidden pattern in a data set. An application of this
+            is clustering, i.e. dividing a set of elements into groups according to some unknown pattern.
+          </p>
+        </li>
+        <li>
+          <p id="p">
+            <div style="color:green">Reinforcement Learning:</div>A strategy built on observation. Think of a little mouse running through a maze. If it turns left, it gets a piece of cheese; if it turns right, it
+            receives a little shock. (Dont worry, this is just a pretend mouse.) Presumably, the mouse will learn over time to turn left. Its neural network makes a decision with an
+            outcome (turn left or right) and observes its environment (yum or ouch). If the observation is negative, the network can adjust its weights in order to make a different decision the next time
+          </p>
+        </li>
+      </ul>
+      </div>
+    </div>
+    <footer class="page-footer font-small blue pt-4" style="background-color:#2E8B57;"></footer>
+  </body>
+</html>

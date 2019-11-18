@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charsrt="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script language="javascript" type="text/javascript" src="ExamplMLP/libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="ExamplMLP/libraries/p5.dom.min.js"></script>
+  <script language="javascript" type="text/javascript" src="ExamplMLP/libraries/Matrix.js"></script>
+  <script language="javascript" type="text/javascript" src="ExamplMLP/libraries/nn.js"></script>
+  <script language="javascript" type="text/javascript" src="ExamplMLP/Connection.js"></script>
+  <script language="javascript" type="text/javascript" src="ExamplMLP/Network.js"></script>
+  <script language="javascript" type="text/javascript" src="ExamplMLP/Neuron.js"></script>
+  <!-- <script language="javascript" type="text/javascript" src="ExamplMLP/Points.js"></script> -->
+  <script language="javascript" type="text/javascript" src="ExamplMLP/sketch.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+  <title>Examplefeedforward</title>
+  <style>
+
+    #nav{
+      background-color:	#2E8B57;
+    }
+    #mg{
+      width:8%;
+      height:4%;
+    }
+    #body{
+      background-color:;
+      font-family: "Lato", sans-serif;
+    }
+    #main{
+      color:black;
+      padding:2%;
+      font-size: 16px;
+      font-family: "Lato", sans-serif;
+      }
+      #mg1{
+          border-style: solid;
+      }
+      #p{
+        text-align: justify;
+        font-family: "Lato", sans-serif;
+      }
+      #col2{
+        font-size:14px;
+          border-style: solid;
+          border-width: 1px;
+          padding:1%;
+          font-family: "Lato", sans-serif;
+        }
+        #col10{
+          padding:0%;
+          background-color:#DCDCDC;
+          border-style: solid;
+          border-width: 1px;
+          font-family: "Lato", sans-serif;
+        }
+        #a{
+          font-size:16px;
+          padding:2%;
+          font-family: "Lato", sans-serif;
+        }
+        #dropdown{
+          background-color:	#3CB371;
+        }
+        #a{
+          background-color:	#3CB371;
+        }
+        .dropdown a:hover{
+           background-color:	#3CB371;
+        }
+        .navbar a:hover{
+             background-color:	#3CB371;
+        }
+
+    </style>
+    </head>
+  <body id="body">
+
+  <!--navbar-->
+
+  <nav class="navbar navbar-expand-md " id="nav">
+    <img src="image/logo1.png"class="rounded"id="mg">
+    <ul class="nav nav-tab">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Perceptron</a>
+        <div class="dropdown-menu "id="dropdown">
+          <a class="dropdown-item text-light" id="a"href="perceptron.html">Perceptron</a>
+          <!-- <a class="dropdown-item" href="single_layer_perceptron.html">Single layer Perceptron</a> -->
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Multilayer Perceptron</a>
+        <div class="dropdown-menu "id="dropdown">
+          <a class="dropdown-item text-light"id="a"href="feedforward.html">Feedforward Model</a>
+          <a class="dropdown-item text-light"id="a" href="Examplefeedforward.html">Example</a>
+
+          <!-- <a class="dropdown-item" href="backpropagation.html">Backpropagation</a> -->
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Digits recognition</a>
+        <div class="dropdown-menu "id="dropdown">
+            <a class="dropdown-item text-light" id="a" href="Examplefeedforward2.html">Example</a>
+          <!-- <a class="dropdown-item" href="backpropagation.html">Backpropagation</a> -->
+        </div>
+      </li>
+    </ul>
+    <ul class="nav nav-tap ml-auto">
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="index.html"> <i class="fas fa-home"style="width:22px"></i>Home</a>
+      </li>
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="aboutus.html"><i class="fas fa-address-card"style="width:22px"></i>About-us</a>
+      </li>
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="Documentations.html"><i class="fas fa-file"style="width:22px"></i>Documentations</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!--main window-->
+  <div id="main">
+    <h3>Feedforward model Example</h3>
+      <div id="p">
+      </div>
+      <br/>
+      <h4>Visualisation of feedforward MLP</h4>
+      <div class="row">
+      <div class="col-2" id="col2">
+        <input type="button" id="start"class="btn btn-success btn-sm" value="Start">
+        <input type="button" id="reset"class="btn btn-success btn-sm" value="Reset">
+        <p></p>
+        <input type="button" id="train"class="btn btn-success btn-sm" value="Train 1 Epoch"><br/>
+        <p></p>
+        <input type="button" id="train100"class="btn btn-success btn-sm" value="Train 100 Epoch">
+        <p>Activation Function: </p>
+        <input type="radio" id="activation" name="activation" value="sigmoid" checked> Sigmoid
+        <input type="radio" id="activation" name="activation" value="tanh" > Tanh
+        <p id="numOutput">No. of Output: 1</p>
+        <p id="numInput">No. of Inputs: 2</p>
+        <p id="numHiddenLayer">No. of Hidden Layers: 1</p>
+        <p id="numHiddenNodes">No. of Hidden Neurons: 4</p>
+        <input type="button" id="numHN+"class="btn btn-success btn-sm" value="+">
+        <input type="button" id="numHN-"class="btn btn-success btn-sm" value="-">
+        <!-- <p id="accuracy">Accuracy: 0.0%</p> -->
+        <p id="epochID">Epoch: 0</p>
+    </div>
+    <div class="col-10"id="col10">
+        <div id="sketch-div"></div>
+    </div>
+  </div>
+  <br>
+  <div id="p">
+    Here, It is an example of feedforward neural network which is attempting to solve XOR problems using supervised learning technique.
+    On the left side is the visualisation of the neural network solving the XOR problems by predicting whether the output is black or white. In the square box it shows the value 0 for black and 1 for white.
+    The neural network classifies black on the top left corner and bottom right corner and white on top right corner and bottom left corner . it shows how Multilayer layer network can solve non linear problems.
+    On the right side is the visualisation of the actual network which solve the XOR problem which shows the architechure of the network ,the number of input nodes, number of hidden layers and number of output nodes.
+    The Neural network takes a datasets feed it to the neuron and check whether the output get the correct answer or not, if it gets the correct answer it stops otherwise it adjust the weight and feed it again to the neuron.
+  </div>
+  </div>
+  <!-- Footer -->
+<footer class="page-footer font-small blue pt-4" style="background-color:#2E8B57"></footer>
+  </body>
+</html>

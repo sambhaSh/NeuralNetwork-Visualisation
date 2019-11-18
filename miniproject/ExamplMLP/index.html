@@ -1,0 +1,43 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/p5.dom.min.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/Matrix.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/nn.js"></script>
+  <script language="javascript" type="text/javascript" src="Connection.js"></script>
+  <script language="javascript" type="text/javascript" src="Network.js"></script>
+  <script language="javascript" type="text/javascript" src="Neuron.js"></script>
+  <script language="javascript" type="text/javascript" src="Points.js"></script>
+  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+  <!-- <script language="javascript" type="text/javascript" src="Experiment.js"></script> -->
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+
+  <!-- This line removes any default padding and style.
+       You might only need one of these values set. -->
+  <style> body { padding: 0; margin: 0; } </style>
+</head>
+
+<body>
+  <div>
+    <input type="button" id="start" value="Start">
+    <input type="button" id="reset" value="Reset">
+    <input type="button" id="train" value="Train 1 Epoch">
+    <input type="button" id="train100" value="Train 100 Epoch">
+    <p>Activation Function: </p>
+    <input type="radio" id="activation" name="activation" value="sigmoid" > Sigmoid
+    <input type="radio" id="activation" name="activation" value="tanh" checked> Tanh
+    <p id="numOutput">No. of Output: 1</p>
+    <p id="numInput">No. of Inputs: 2</p>
+    <p id="numHiddenLayer">No. of Hidden Layers: 1</p>
+    <p id="numHiddenNodes">No. of Hidden Neurons: 4</p>
+    <input type="button" id="numHN+" value="+">
+    <input type="button" id="numHN-" value="-">
+    <!-- <p id="accuracy">Accuracy: 0.0%</p> -->
+    <p id="epochID">Epoch: 0</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/p5.dom.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/papaparse.min.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/Matrix.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/nn.js"></script>
+  <script language="javascript" type="text/javascript" src="func.js"></script>
+  <script language="javascript" type="text/javascript" src="Digits.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+
+  <!-- This line removes any default padding and style.
+       You might only need one of these values set. -->
+  <style>
+    body {
+      padding:
+        0;
+      margin:
+        0;
+    }
+
+    button {
+      font-size:
+        16pt;
+      margin:
+        5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <button id="train"> train</button>
+    <button id="test"> test</button>
+    <button id="guess"> guess</button>
+    <button id="clear"> clear</button>
+    <p id="progress"></p>
+    <p id="label"></p>
+    <p id="epoch"></p>
+    <p id="percent"></p>
+  </div>
+</body>
+
+</html>

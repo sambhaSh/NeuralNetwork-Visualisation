@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charsrt="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script language="javascript" type="text/javascript" src="Digits/libraries/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="Digits/libraries/p5.dom.js"></script>
+  <script language="javascript" type="text/javascript" src="Digits/libraries/papaparse.min.js"></script>
+  <script language="javascript" type="text/javascript" src="Digits/libraries/Matrix.js"></script>
+  <script language="javascript" type="text/javascript" src="Digits/libraries/nn.js"></script>
+  <script language="javascript" type="text/javascript" src="Digits/func.js"></script>
+  <!-- <script language="javascript" type="text/javascript" src="Digits/sketch.js"></script> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+  <title>Examplefeedforward</title>
+  <style>
+
+    #nav{
+      background-color:	#2E8B57;
+    }
+    #mg{
+      width:8%;
+      height:4%;
+    }
+    #body{
+      background-color:;
+      font-family: "Lato", sans-serif;
+    }
+    #main{
+      color:black;
+      padding:2%;
+      font-size: 16px;
+      font-family: "Lato", sans-serif;
+      }
+      #mg1{
+          border-style: solid;
+      }
+      #p{
+        text-align: justify;
+        font-family: "Lato", sans-serif;
+      }
+      #col2{
+        font-size:14px;
+          border-style: solid;
+          border-width: 1px;
+          padding:1%;
+          font-family: "Lato", sans-serif;
+        }
+        #col10{
+          padding:0%;
+          border-width: 1px;
+          font-family: "Lato", sans-serif;
+        }
+        #a{
+          font-size:16px;
+          padding:2%;
+          font-family: "Lato", sans-serif;
+        }
+        #dropdown{
+          background-color:	#3CB371;
+        }
+        #a{
+          background-color:	#3CB371;
+        }
+        .dropdown a:hover{
+           background-color:	#3CB371;
+        }
+        .navbar a:hover{
+             background-color:	#3CB371;
+        }
+
+          button {
+            font-size:
+              16pt;
+            margin:
+              5px;
+          }
+        #col4{
+          padding:1%;
+        }
+
+    </style>
+    </head>
+  <body id="body">
+
+  <!--navbar-->
+
+  <nav class="navbar navbar-expand-md " id="nav">
+    <img src="image/logo1.png"class="rounded"id="mg">
+    <ul class="nav nav-tab">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Perceptron</a>
+        <div class="dropdown-menu "id="dropdown">
+          <a class="dropdown-item text-light" id="a"href="perceptron.html">Perceptron</a>
+          <!-- <a class="dropdown-item" href="single_layer_perceptron.html">Single layer Perceptron</a> -->
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Multilayer Perceptron</a>
+        <div class="dropdown-menu "id="dropdown">
+          <a class="dropdown-item text-light"id="a"href="feedforward.html">Feedforward Model</a>
+          <a class="dropdown-item text-light"id="a" href="Examplefeedforward.html">Example</a>
+          <!-- <a class="dropdown-item" href="backpropagation.html">Backpropagation</a> -->
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown">Digits recognition</a>
+        <div class="dropdown-menu "id="dropdown">
+          <a class="dropdown-item text-light"id="a"href="#">Example</a>
+          <!-- <a class="dropdown-item" href="backpropagation.html">Backpropagation</a> -->
+        </div>
+      </li>
+    </ul>
+    <ul class="nav nav-tap ml-auto">
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="index.html"> <i class="fas fa-home"style="width:22px"></i>Home</a>
+      </li>
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="aboutus.html"><i class="fas fa-address-card"style="width:22px"></i>About-us</a>
+      </li>
+      <li class="nav-iem active">
+        <a class="nav-link text-light"href="Documentations.html"><i class="fas fa-file"style="width:22px"></i>Documentations</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!--main window-->
+  <div id="main">
+    <h3>Digits recognition</h3>
+      <br/>
+      <div class="row">
+      <div class="col-2.5" id="col2">
+          <button type ="button" class="btn btn-success btn-sm " id="train"> train</button>
+          <button  type ="button" class="btn btn-success btn-sm " id="test"> test</button>
+          <button  type ="button" class="btn btn-success btn-sm " id="guess"> guess</button>
+          <button  type ="button" class="btn btn-success btn-sm " id="clear"> clear</button>
+          <p id="progress"></p>
+          <p id="label"></p>
+          <p id="epoch"></p>
+          <p id="percent"></p>
+    </div>
+    <div class="col-5"id="col10">
+      <div id="Digits-div">
+          <script language="javascript" type="text/javascript" src="Digits/sketch.js"></script>
+    </div>
+  </div>
+  <div class="col-4"id="col4">
+    <p id="p">
+      We present a feed-forward network architecture for recognizing an unconstrained handwritten multi-digit string. This is an extension of previous
+      work on recognizing isolated digits. In this architecture a single digit recognizer is replicated over the input. The output layer of the network is
+      coupled to a Viterbi alignment module that chooses the best interpretation
+      of the input. Training errors are propagated through the Viterbi module.
+      The novelty in this procedure is that segmentation is done on the feature
+      maps developed in the Space Displacement Neural Network (SDNN) rather
+      than the input (pixel) space.
+    <p>
+  </div>
+  </div>
+  <br/>
+  <p id="p">
+    Though dynamic programming algorithms save us from exploring an exponential
+    number of segment combinations, they are still linear in the number of possible
+    segments - requiring one call to the recognition unit per candidate segment.
+  <p>
+</div>
+  <!-- Footer -->
+<footer class="page-footer font-small blue pt-4" style="background-color:#2E8B57"></footer>
+  </body>
+</html>
